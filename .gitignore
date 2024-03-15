@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/VideogamesStore.WorkerService/appsettings.json
+/VideogamesStore.WorkerService/Properties/launchSettings.json
+/VideogamesStore.Api/appsettings.json
+/VideogamesStore.Api/Containers/.env
+/VideogamesStore.Api/Containers/command_db/*
+/VideogamesStore.Api/Containers/query_db/*
+/VideogamesStore.WorkerService/appsettings.json
+/VideogamesStore.WorkerService/appsettings.Development.json

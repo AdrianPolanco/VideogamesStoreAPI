@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  command-db:
+    image: postgres:16.2-alpine
+    restart: always
+
+    volumes:
+        - ./command_db:/var/lib/postgresql/data
+    ports:
+        - "${COMMAND_LOCAL_PORT}:${COMMAND_CONTAINER_PORT}"
+    environment:
+        - POSTGRES_USER=${COMMAND_USER}
+        - POSTGRES_PASSWORD=${COMMAND_PASSWORD}
+        - POSTGRES_DB=${COMMAND_DB_NAME}
+  query-db:
+    depends_on:
+        - command-db
+    image: postgres:16.2-alpine
+    restart: always
+
+    volumes:
+        - ./query_db:/var/lib/postgresql/data
+    ports:
+        - "${QUERY_LOCAL_PORT}:${QUERY_CONTAINER_PORT}"
+    environment:
+        - POSTGRES_USER=${QUERY_USER}
+        - POSTGRES_PASSWORD=${QUERY_PASSWORD}
+        - POSTGRES_DB=${QUERY_DB_NAME}
+
+    
+        
