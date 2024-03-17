@@ -5,9 +5,7 @@
 /VideogamesStore.WorkerService/appsettings.json
 /VideogamesStore.WorkerService/Properties/launchSettings.json
 /VideogamesStore.Api/appsettings.json
-/VideogamesStore.Api/Containers/.env
-/VideogamesStore.Api/Containers/command_db/*
-/VideogamesStore.Api/Containers/query_db/*
+/VideogamesStore.Api/Infrastructure_Containers/.env
 /VideogamesStore.WorkerService/appsettings.json
 /VideogamesStore.WorkerService/appsettings.Development.json
 /VideogamesStore.Infrastructure/bin/
