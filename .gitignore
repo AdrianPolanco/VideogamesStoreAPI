@@ -10,3 +10,5 @@
 /VideogamesStore.Api/Containers/query_db/*
 /VideogamesStore.WorkerService/appsettings.json
 /VideogamesStore.WorkerService/appsettings.Development.json
+/VideogamesStore.Tests/bin/
+/VideogamesStore.Tests/obj/
