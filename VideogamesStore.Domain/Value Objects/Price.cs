@@ -5,7 +5,7 @@ using VideogamesStore.Domain.Shared.Enums;
 
 namespace VideogamesStore.Domain.Value_Objects
 {
-    public record class Price
+    public sealed record class Price
     {
         //private string[] Allowed_Currencies = new string[] { "USD", "EUR", "GBP", "DOP" };
         private Price(string code, decimal amount) { 

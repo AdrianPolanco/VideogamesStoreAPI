@@ -1,7 +1,14 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\VideogamesStore.Domain",
+    "\\VideogamesStore.Domain\\Exceptions",
+    "\\VideogamesStore.Infrastructure",
+    "\\VideogamesStore.Tests",
+    "\\VideogamesStore.Tests\\Domain",
+    "\\VideogamesStore.Tests\\Domain\\Value Objects",
+    "\\VideogamesStore.WorkerService"
   ],
-  "SelectedNode": "\\.gitignore",
+  "SelectedNode": "\\VideogamesStore.Tests\\Domain\\Value Objects\\PriceTest.cs",
   "PreviewInSolutionExplorer": false
 }
