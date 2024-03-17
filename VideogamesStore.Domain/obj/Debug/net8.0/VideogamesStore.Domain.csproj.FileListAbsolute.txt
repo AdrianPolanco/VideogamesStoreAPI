@@ -1,0 +1,12 @@
+F:\adfer\VideogamesStore\VideogamesStore.Domain\bin\Debug\net8.0\VideogamesStore.Domain.deps.json
+F:\adfer\VideogamesStore\VideogamesStore.Domain\bin\Debug\net8.0\VideogamesStore.Domain.dll
+F:\adfer\VideogamesStore\VideogamesStore.Domain\bin\Debug\net8.0\VideogamesStore.Domain.pdb
+F:\adfer\VideogamesStore\VideogamesStore.Domain\obj\Debug\net8.0\VideogamesStore.Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\adfer\VideogamesStore\VideogamesStore.Domain\obj\Debug\net8.0\VideogamesStore.Domain.AssemblyInfoInputs.cache
+F:\adfer\VideogamesStore\VideogamesStore.Domain\obj\Debug\net8.0\VideogamesStore.Domain.AssemblyInfo.cs
+F:\adfer\VideogamesStore\VideogamesStore.Domain\obj\Debug\net8.0\VideogamesStore.Domain.csproj.CoreCompileInputs.cache
+F:\adfer\VideogamesStore\VideogamesStore.Domain\obj\Debug\net8.0\VideogamesStore.Domain.sourcelink.json
+F:\adfer\VideogamesStore\VideogamesStore.Domain\obj\Debug\net8.0\VideogamesStore.Domain.dll
+F:\adfer\VideogamesStore\VideogamesStore.Domain\obj\Debug\net8.0\refint\VideogamesStore.Domain.dll
+F:\adfer\VideogamesStore\VideogamesStore.Domain\obj\Debug\net8.0\VideogamesStore.Domain.pdb
+F:\adfer\VideogamesStore\VideogamesStore.Domain\obj\Debug\net8.0\ref\VideogamesStore.Domain.dll

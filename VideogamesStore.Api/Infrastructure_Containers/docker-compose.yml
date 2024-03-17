@@ -1,0 +1,38 @@
+version: "3.9"
+networks:
+  app:
+    driver: bridge
+services:
+  command_database:
+    image: bitnami/postgresql:16.2.0
+    restart: always
+
+    volumes:
+        - ./command:/var/lib/postgresql/data
+    ports:
+        - "${COMMAND_LOCAL_PORT}:${COMMAND_CONTAINER_PORT}"
+    environment:
+        - POSTGRESQL_REPLICATION_MODE=${REPLICATION_MODE}
+        - POSTGRESQL_USERNAME=${COMMAND_USER}
+        - POSTGRESQL_PASSWORD=${COMMAND_PASSWORD}
+        - POSTGRESQL_DATABASE=${DB_NAME}
+        - POSTGRESQL_REPLICATION_USER=${REPLICATION_USER}
+        - POSTGRESQL_REPLICATION_PASSWORD=${REPLICATION_PASSWORD}
+  query_database:
+    image: bitnami/postgresql:16.2.0
+    restart: always
+
+    volumes:
+        - ./query:/var/lib/postgresql/data
+    ports:
+        - "${QUERY_LOCAL_PORT}:${QUERY_CONTAINER_PORT}"
+    environment:
+        - POSTGRESQL_REPLICATION_MODE=${REPLICATION_MODE_QUERY}
+        - POSTGRESQL_USERNAME=${QUERY_USER}
+        - POSTGRESQL_PASSWORD=${QUERY_PASSWORD}
+        - POSTGRESQL_MASTER_HOST=command_database
+        - POSTGRESQL_MASTER_PORT_NUMBER=${QUERY_CONTAINER_PORT}
+        - POSTGRESQL_REPLICATION_USER=${REPLICATION_USER}
+        - POSTGRESQL_REPLICATION_PASSWORD=${REPLICATION_PASSWORD}
+    depends_on:
+        - command_database
