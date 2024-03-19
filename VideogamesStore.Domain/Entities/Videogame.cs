@@ -1,12 +1,11 @@
 ﻿
-using VideogamesStore.Domain.Abstractions.Entities;
-using VideogamesStore.Domain.Value_Objects;
+using VideogamesStore.Domain.Abstractions.Primitives.Entities;
 
 namespace VideogamesStore.Domain.Entities
 {
-    public class Videogame: Auditable
+    public class Videogame: Entity
     {
-        public Videogame() { }
+        public Videogame(Guid Id) : base(Id) { }
 
         public string Name { get; set; }
         public DateTimeOffset ReleaseDate { get; set; }

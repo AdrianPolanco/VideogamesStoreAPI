@@ -1,12 +1,16 @@
 ﻿
-using VideogamesStore.Domain.Abstractions.Entities;
+using VideogamesStore.Domain.Abstractions.Primitives.Entities;
 using VideogamesStore.Domain.Entities;
 using VideogamesStore.Domain.Exceptions;
 
 namespace VideogamesStore.Domain.Aggregates
 {
-    public class Order: BaseAuditable
+    public class Order: Entity
     {
+        public Order(Guid Id) : base(Id)
+        {
+            
+        }
         public decimal Total { get; private set; }
         public List<Sale> Sales { get; set; }
         public Guid AddressId { get; set; }

@@ -1,12 +1,13 @@
 ﻿
-using VideogamesStore.Domain.Abstractions.Entities;
+
+using VideogamesStore.Domain.Abstractions.Primitives.Entities;
 
 namespace VideogamesStore.Domain.Entities
 {
-    public class Genre: Auditable
+    public class Genre: Entity
     {
-        public Genre() { }
-        public Genre(string name, string description) { 
+        public Genre(Guid Id, string name, string description) : base(Id)
+        { 
             Name = name;
             Description = description;
         }

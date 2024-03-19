@@ -1,13 +1,13 @@
 ﻿
-using VideogamesStore.Domain.Abstractions.Entities;
+using VideogamesStore.Domain.Abstractions.Primitives.Entities;
 
 namespace VideogamesStore.Domain.Entities
 {
-    public class Platform: Auditable
+    public class Platform: Entity
     {
-        public Platform() { }
 
-        public Platform(string name, string code, Guid companyId) { 
+        public Platform(Guid Id, string name, string code, Guid companyId) : base(Id)
+        { 
             Name = name;
             Code = code;
             CompanyId = companyId;

@@ -1,11 +1,10 @@
-﻿using VideogamesStore.Domain.Abstractions.Entities;
+﻿using VideogamesStore.Domain.Abstractions.Primitives.Entities;
 
 namespace VideogamesStore.Domain.Entities
 {
-    public class Company: Auditable
+    public class Company: Entity
     {
-        public Company() { }
-        public Company(string name, string code) { 
+        public Company(Guid Id, string name, string code): base(Id) { 
             Name = name;
             Code = code;
         }

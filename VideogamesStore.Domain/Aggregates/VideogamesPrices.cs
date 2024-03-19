@@ -1,10 +1,10 @@
-﻿using VideogamesStore.Domain.Abstractions.Entities;
+﻿
 using VideogamesStore.Domain.Entities;
 using VideogamesStore.Domain.Exceptions;
 
 namespace VideogamesStore.Domain.Aggregates
 {
-    public class VideogamesPrices: Auditable
+    public class VideogamesPrices
     {
         public Guid VideoGameId { get; set; }
         public Videogame Videogame { get; set; }

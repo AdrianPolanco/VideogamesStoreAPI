@@ -1,12 +1,12 @@
 ﻿
-using VideogamesStore.Domain.Abstractions.Entities;
+using VideogamesStore.Domain.Abstractions.Primitives.Entities;
 using VideogamesStore.Domain.Value_Objects;
 
 namespace VideogamesStore.Domain.Entities
 {
-    public class Classification: Auditable
+    public class Classification: Entity
     {
-        public Classification(Rating rating)
+        public Classification(Guid Id, Rating rating):base(Id)
         {
             Code = rating.Code;
             RecommendedAge = rating.RecommendedAge;

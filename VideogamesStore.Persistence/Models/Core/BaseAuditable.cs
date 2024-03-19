@@ -1,6 +1,6 @@
 ﻿
 
-namespace VideogamesStore.Domain.Abstractions.Entities
+namespace VideogamesStore.Persistence.Models.Core
 {
     public abstract class BaseAuditable
     {

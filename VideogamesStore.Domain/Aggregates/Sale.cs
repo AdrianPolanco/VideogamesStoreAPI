@@ -1,12 +1,15 @@
 ﻿
-
-using VideogamesStore.Domain.Abstractions.Entities;
+using VideogamesStore.Domain.Abstractions.Primitives.Entities;
 using VideogamesStore.Domain.Entities;
 
 namespace VideogamesStore.Domain.Aggregates
 {
-    public class Sale: BaseAuditable
+    public class Sale: Entity
     {
+        public Sale(Guid Id): base(Id)
+        {
+            
+        }
         public Guid VideogamePriceId { get; set; }
         public VideogamesPrices VideogamesPrices { get; set; }
         public Guid CustomerId { get; set; }

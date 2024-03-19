@@ -1,11 +1,15 @@
 ﻿
 
-using VideogamesStore.Domain.Abstractions.Entities;
+using VideogamesStore.Domain.Abstractions.Primitives.Entities;
 
 namespace VideogamesStore.Domain.Entities
 {
-    public class Customer: Auditable
+    public class Customer: Entity
     {
+        public Customer(Guid Id) : base(Id)
+        {
+            
+        }
         public string Name { get; set; }
         public string LastName { get; set; }    
         public DateTimeOffset BirthDate { get; set; }

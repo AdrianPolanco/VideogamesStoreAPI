@@ -5,15 +5,19 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideogamesStore.Api", "VideogamesStore.Api\VideogamesStore.Api.csproj", "{6AFBA00A-5ADF-427B-A97E-9462EF04C48C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideogamesStore.Domain", "VideogamesStore.Domain\VideogamesStore.Domain.csproj", "{B63CF80C-8FBB-48CF-929F-D26E933BFFC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideogamesStore.Domain", "VideogamesStore.Domain\VideogamesStore.Domain.csproj", "{B63CF80C-8FBB-48CF-929F-D26E933BFFC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideogamesStore.Application", "VideogamesStore.Application\VideogamesStore.Application.csproj", "{47B40CA4-09A0-41FA-B13C-490BD45FA2C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideogamesStore.Application", "VideogamesStore.Application\VideogamesStore.Application.csproj", "{47B40CA4-09A0-41FA-B13C-490BD45FA2C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideogamesStore.Infrastructure", "VideogamesStore.Infrastructure\VideogamesStore.Infrastructure.csproj", "{93E77E3B-0E25-46B4-BD72-9D7497CDB301}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideogamesStore.Infrastructure", "VideogamesStore.Infrastructure\VideogamesStore.Infrastructure.csproj", "{93E77E3B-0E25-46B4-BD72-9D7497CDB301}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideogamesStore.Tests", "VideogamesStore.Tests\VideogamesStore.Tests.csproj", "{60913DF5-7171-436B-9AF0-335F0A2678CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideogamesStore.Tests", "VideogamesStore.Tests\VideogamesStore.Tests.csproj", "{60913DF5-7171-436B-9AF0-335F0A2678CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideogamesStore.WorkerService", "VideogamesStore.WorkerService\VideogamesStore.WorkerService.csproj", "{28989B15-7D10-481C-A206-1D17E9A91BC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideogamesStore.WorkerService", "VideogamesStore.WorkerService\VideogamesStore.WorkerService.csproj", "{28989B15-7D10-481C-A206-1D17E9A91BC7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideogamesStore.Persistence", "VideogamesStore.Persistence\VideogamesStore.Persistence.csproj", "{8FB34596-4DD0-40E1-B8A6-CF97F04887AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideogamesStore.ConsoleTests", "VideogamesStore.ConsoleTests\VideogamesStore.ConsoleTests.csproj", "{52CB0394-1618-48E0-BB34-11624FE4AF7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{28989B15-7D10-481C-A206-1D17E9A91BC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28989B15-7D10-481C-A206-1D17E9A91BC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28989B15-7D10-481C-A206-1D17E9A91BC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FB34596-4DD0-40E1-B8A6-CF97F04887AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FB34596-4DD0-40E1-B8A6-CF97F04887AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FB34596-4DD0-40E1-B8A6-CF97F04887AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FB34596-4DD0-40E1-B8A6-CF97F04887AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52CB0394-1618-48E0-BB34-11624FE4AF7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52CB0394-1618-48E0-BB34-11624FE4AF7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52CB0394-1618-48E0-BB34-11624FE4AF7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52CB0394-1618-48E0-BB34-11624FE4AF7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

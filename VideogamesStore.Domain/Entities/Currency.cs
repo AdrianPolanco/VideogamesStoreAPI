@@ -1,11 +1,12 @@
-﻿using VideogamesStore.Domain.Abstractions.Entities;
+﻿
+using VideogamesStore.Domain.Abstractions.Primitives.Entities;
 using VideogamesStore.Domain.Value_Objects;
 
 namespace VideogamesStore.Domain.Entities
 {
-    public class Currency: Auditable
+    public class Currency: Entity
     {
-        public Currency(string name, Price price)
+        public Currency(Guid Id, string name, Price price) : base(Id)
         {
             Name = name;
             Code = price.Code;

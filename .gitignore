@@ -10,6 +10,8 @@
 /VideogamesStore.WorkerService/appsettings.Development.json
 /VideogamesStore.Infrastructure/bin/
 /VideogamesStore.Infrastructure/obj/
+/VideogamesStore.Persistence/bin/
+/VideogamesStore.Persistence/obj/
 /VideogamesStore.Domain/bin/
 /VideogamesStore.Domain/obj/
 /VideogamesStore.Tests/bin/
@@ -20,3 +22,4 @@
 /VideogamesStore.Api/obj/
 /VideogamesStore.WorkerService/bin/
 /VideogamesStore.WorkerService/obj/
+/VideogamesStore.ConsoleTests/
