@@ -1,9 +1,11 @@
 ﻿
 
 using System.Text.RegularExpressions;
-using VideogamesStore.Domain.Abstractions.Primitives.Entities;
+using VideogamesStore.Domain.Abstractions.Primitives;
 using VideogamesStore.Domain.Exceptions;
-using VideogamesStore.Domain.Shared.Constants;
+using VideogamesStore.Domain.Exceptions.ValueObjects.Country;
+using VideogamesStore.Domain.Shared.Errors;
+using VideogamesStore.Domain.Shared.Utils;
 
 namespace VideogamesStore.Domain.Value_Objects
 {
@@ -22,31 +24,55 @@ namespace VideogamesStore.Domain.Value_Objects
         public string PostalCodePattern { get; private set; }
         public string Code { get; private set; }
 
-        public static Country Create(List<dynamic> validCountries, string name, string continent, string code, string postalCodePattern)
+        public static Country? Create(List<dynamic> validCountries, string name, string continent, string code, string postalCodePattern)
         {
-            Validate(validCountries, name.Trim(), continent.Trim(), code.Trim(), postalCodePattern);
-            return new Country(name.Trim(), continent.Trim(), code.Trim(), postalCodePattern);
+            ValidationResponse validation = Validate(validCountries, name.Trim(), continent.Trim(), code.Trim(), postalCodePattern);
+
+            if(validation.HasErrors is false) return new Country(name.Trim(), continent.Trim(), code.Trim(), postalCodePattern);
+            return null;
 
         }
 
-        private static void Validate(List<dynamic> validCountries, string name, string continent, string code, string postalCodePattern)
+        public static ValidationResponse Validate(List<dynamic> validCountries, string name, string continent, string code, string postalCodePattern)
         {
-            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(continent) || string.IsNullOrEmpty(code) || string.IsNullOrEmpty(postalCodePattern)) throw new ArgumentNullException();
+            ValidationResponse validation = new();
+            //Validating if 
+            if (Check.ValueIsNotEmpty(name, ErrorMessages.InvalidRequiredValue, name) is Error errorCountry && errorCountry is not null) validation.AddError(errorCountry);
+            if (Check.ValueIsNotEmpty(continent, ErrorMessages.InvalidRequiredValue, continent) is Error errorContinent && errorContinent is not null) validation.AddError(errorContinent);
+            if (validation.Errors.Count() >= 2) return validation;
+            if (Check.ValueIsNotEmpty(code, ErrorMessages.InvalidRequiredValue, code) is Error errorCode && errorCode is not null) validation.AddError(errorCode);
+            if (Check.ValueIsNotEmpty(postalCodePattern, ErrorMessages.InvalidRequiredValue, postalCodePattern) is Error errorPostalCode && errorPostalCode is not null) validation.AddError(errorPostalCode);
+            /*if (string.IsNullOrEmpty(continent)) validation.AddError(new Error(ErrorCause.RequiredValueIsNullOrEmpty, ErrorMessages.InvalidRequiredValue, continent));
+            if (string.IsNullOrEmpty(code)) validation.AddError(new Error(ErrorCause.RequiredValueIsNullOrEmpty, ErrorMessages.InvalidRequiredValue, code));
+            if (string.IsNullOrEmpty(postalCodePattern)) validation.AddError(new Error(ErrorCause.RequiredValueIsNullOrEmpty, ErrorMessages.InvalidRequiredValue, postalCodePattern));*/
+
+            
+
             bool countryExists = validCountries.Any(c => c.Name == name);
-            if (!countryExists) throw new InvalidCountryException(ErrorMessages.NonExistentCountry, nameof(name), name);
+            if (!countryExists) validation.AddError(new Error(ErrorCause.NonExistentCountry, ErrorMessages.NonExistentCountry, name));
 
             bool continentExists = validCountries.Any(c => c.Continent == continent);
-            if (!continentExists) throw new InvalidCountryException(ErrorMessages.NonExistentContinent, nameof(continent), continent);
+            if (!continentExists) validation.AddError(new Error(ErrorCause.NonExistentContinent, ErrorMessages.NonExistentContinent, continent));
 
             var matchedCountry = validCountries.FirstOrDefault(c => c.Name == name);
 
+            if (matchedCountry is null) return validation;
+
             bool countryMatchesContinent = matchedCountry.Continent.Equals(continent);
-            if (!countryMatchesContinent) throw new InvalidCountryException(ErrorMessages.InvalidProvidedContinent, nameof(continent), continent);
+            if (!countryMatchesContinent) validation.AddError(new Error(ErrorCause.CountryNotMatchingContinent, ErrorMessages.CountryNotMatchingContinent, continent));
+
+            bool countryMatchesCode = matchedCountry.Code.Equals(code);
+            if (!countryMatchesCode) validation.AddError(new Error(ErrorCause.CountryNotMatchingCode, ErrorMessages.CountryNotMatchingCode, code));
 
             bool codeIsValid = matchedCountry.Code.Equals(code);
 
-            if (!codeIsValid) throw new InvalidCountryException(ErrorMessages.InvalidCountryCode, nameof(code), code);
- }
+            if (!codeIsValid) validation.AddError(new Error(ErrorCause.InvalidCountryCode, ErrorMessages.InvalidCountryCode, code));
+
+            bool countryMatchesPattern = matchedCountry.Pattern.Equals(postalCodePattern);
+            if (!countryMatchesPattern) validation.AddError(new Error(ErrorCause.CountryNotMatchingPattern, ErrorMessages.CountryNotMatchingPattern, postalCodePattern));
+
+            return validation;
+        }
             /*  var postalCodePattern = matchedCountry.Pattern;
 
               Regex regex = new Regex(postalCodePattern, RegexOptions.Compiled);

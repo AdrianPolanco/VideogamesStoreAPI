@@ -1,7 +1,4 @@
-﻿
-
-using VideogamesStore.Domain.Shared.Constants;
-using VideogamesStore.Domain.Value_Objects;
+﻿using VideogamesStore.Domain.Shared.Errors;
 
 namespace VideogamesStore.Tests.Messages
 {

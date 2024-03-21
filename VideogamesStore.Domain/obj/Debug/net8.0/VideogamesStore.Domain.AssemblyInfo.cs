@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VideogamesStore.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+380eb2483642d42f544e8d25cd602e4200d5b122")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dcc24b160c56ae464bd1e50b5d30349213622d10")]
 [assembly: System.Reflection.AssemblyProductAttribute("VideogamesStore.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VideogamesStore.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

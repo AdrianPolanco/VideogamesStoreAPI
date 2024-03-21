@@ -1,21 +1,26 @@
 ﻿
 
+using VideogamesStore.Domain.Shared.Errors;
+
 namespace VideogamesStore.Domain.Shared.Utils
 {
     public static class Check
     {
-        public static void GuidIsNotEmpty(Guid id, string message, string argument)
+        public static Error? GuidIsNotEmpty(Guid id, string message, string argument)
         {
-            if (id == Guid.Empty) throw new ArgumentException(message, argument);
+            if (id == Guid.Empty) return new Error(ErrorCause.GuidIsNull, $"{message}. Error occurred in {argument}.", id);
+            return null;
         }
-        public static void ValueIsNotEmpty(string value, string message, string argument)
+        public static Error? ValueIsNotEmpty(string value, string message, string argument)
         {
-            if(string.IsNullOrWhiteSpace(value)) throw new ArgumentException(message, argument);
+            if(string.IsNullOrWhiteSpace(value)) return new Error(ErrorCause.RequiredValueIsNullOrEmpty, $"{message}. Error occurred in {argument}.", value);
+            return null;
         }
 
-        public static void InstanceIsNotNull<T>(T instance, string message, string argument)
+        public static Error? InstanceIsNotNull<T>(T instance, string message, string argument)
         {
-            if(instance is null ) throw new ArgumentNullException(message, argument);
+            if(instance is null ) return new Error(ErrorCause.RequiredInstanceIsNull, $"{message}. Error occurred in {argument}.", instance);
+            return null;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using VideogamesStore.Domain.Shared.Utils;
 
-namespace VideogamesStore.Domain.Abstractions.Primitives.Entities
+namespace VideogamesStore.Domain.Abstractions.Primitives
 {
     public abstract class Entity : IEquatable<Entity>
     {

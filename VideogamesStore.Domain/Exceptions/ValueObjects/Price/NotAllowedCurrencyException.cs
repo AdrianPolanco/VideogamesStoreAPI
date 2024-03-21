@@ -1,8 +1,8 @@
 ﻿using System.Runtime.Serialization;
-using VideogamesStore.Domain.Shared.Constants;
 using VideogamesStore.Domain.Shared.Enums;
+using VideogamesStore.Domain.Shared.Errors;
 
-namespace VideogamesStore.Domain.Exceptions
+namespace VideogamesStore.Domain.Exceptions.ValueObjects.Price
 {
     public class NotAllowedCurrencyException : Exception
     {

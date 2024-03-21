@@ -1,6 +1,4 @@
-﻿
-
-namespace VideogamesStore.Domain.Abstractions.Primitives.Entities
+﻿namespace VideogamesStore.Domain.Abstractions.Primitives
 {
     public abstract class ValueObject : IEquatable<ValueObject>
     {
@@ -9,7 +7,7 @@ namespace VideogamesStore.Domain.Abstractions.Primitives.Entities
         {
             if (a is null && b is null) return true;
 
-            if(a is null || b is null) return false;
+            if (a is null || b is null) return false;
 
             return a.Equals(b);
         }
@@ -25,11 +23,11 @@ namespace VideogamesStore.Domain.Abstractions.Primitives.Entities
         /// <returns>bool</returns>
         public bool Equals(ValueObject? other)
         {
-            if(other is null) return false;
+            if (other is null) return false;
 
-            if(GetType() != other.GetType()) return false;
+            if (GetType() != other.GetType()) return false;
 
-            if(!(other is ValueObject valueObject)) return false;
+            if (!(other is ValueObject valueObject)) return false;
 
             return GetAtomicValues().SequenceEqual(valueObject.GetAtomicValues());
         }

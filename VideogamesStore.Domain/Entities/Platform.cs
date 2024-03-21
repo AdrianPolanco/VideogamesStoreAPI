@@ -1,5 +1,5 @@
 ﻿
-using VideogamesStore.Domain.Abstractions.Primitives.Entities;
+using VideogamesStore.Domain.Abstractions.Primitives;
 
 namespace VideogamesStore.Domain.Entities
 {

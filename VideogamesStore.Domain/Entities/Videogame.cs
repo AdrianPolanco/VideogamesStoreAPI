@@ -1,5 +1,5 @@
 ﻿
-using VideogamesStore.Domain.Abstractions.Primitives.Entities;
+using VideogamesStore.Domain.Abstractions.Primitives;
 
 namespace VideogamesStore.Domain.Entities
 {
@@ -12,7 +12,7 @@ namespace VideogamesStore.Domain.Entities
         public Guid ClassificationId { get; set; }
         public Guid CompanyId { get; set; }
         public Company Company { get; set; }
-        public Classification Classification { get; set; }
+       // public Classification Classification { get; set; }
         public List<Platform> Platforms { get; set; }
         public List<Genre> Genres { get; set; }
     }
