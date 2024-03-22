@@ -4,6 +4,8 @@ using VideogamesStore.Domain.Shared.Utils;
 
 namespace VideogamesStore.Domain.Value_Objects
 {
+
+
     public class Discount: ValueObject
     {
         private Discount(double percentage, string concept)

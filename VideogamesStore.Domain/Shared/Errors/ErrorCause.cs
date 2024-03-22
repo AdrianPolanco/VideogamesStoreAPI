@@ -17,6 +17,12 @@ namespace VideogamesStore.Domain.Shared.Errors
         InvalidDiscount,
         GuidIsNull,
         RequiredValueIsNullOrEmpty,
-        RequiredInstanceIsNull
+        RequiredInstanceIsNull,
+        InvalidFormat,
+        InvalidAge,
+        InvalidRatingCode,
+        AgeProvidedNotMatchingEmptyCode,
+        InvalidFutureReleaseDate,
+        InvalidPastReleaseDate
     }
 }

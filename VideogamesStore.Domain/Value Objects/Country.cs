@@ -37,11 +37,11 @@ namespace VideogamesStore.Domain.Value_Objects
         {
             ValidationResponse validation = new();
             //Validating if 
-            if (Check.ValueIsNotEmpty(name, ErrorMessages.InvalidRequiredValue, name) is Error errorCountry && errorCountry is not null) validation.AddError(errorCountry);
-            if (Check.ValueIsNotEmpty(continent, ErrorMessages.InvalidRequiredValue, continent) is Error errorContinent && errorContinent is not null) validation.AddError(errorContinent);
+            if (Check.ValueIsNotEmpty(name, ErrorMessages.EmptyOrNullRequiredValue, name) is Error errorCountry && errorCountry is not null) validation.AddError(errorCountry);
+            if (Check.ValueIsNotEmpty(continent, ErrorMessages.EmptyOrNullRequiredValue, continent) is Error errorContinent && errorContinent is not null) validation.AddError(errorContinent);
             if (validation.Errors.Count() >= 2) return validation;
-            if (Check.ValueIsNotEmpty(code, ErrorMessages.InvalidRequiredValue, code) is Error errorCode && errorCode is not null) validation.AddError(errorCode);
-            if (Check.ValueIsNotEmpty(postalCodePattern, ErrorMessages.InvalidRequiredValue, postalCodePattern) is Error errorPostalCode && errorPostalCode is not null) validation.AddError(errorPostalCode);
+            if (Check.ValueIsNotEmpty(code, ErrorMessages.EmptyOrNullRequiredValue, code) is Error errorCode && errorCode is not null) validation.AddError(errorCode);
+            if (Check.ValueIsNotEmpty(postalCodePattern, ErrorMessages.EmptyOrNullRequiredValue, postalCodePattern) is Error errorPostalCode && errorPostalCode is not null) validation.AddError(errorPostalCode);
             /*if (string.IsNullOrEmpty(continent)) validation.AddError(new Error(ErrorCause.RequiredValueIsNullOrEmpty, ErrorMessages.InvalidRequiredValue, continent));
             if (string.IsNullOrEmpty(code)) validation.AddError(new Error(ErrorCause.RequiredValueIsNullOrEmpty, ErrorMessages.InvalidRequiredValue, code));
             if (string.IsNullOrEmpty(postalCodePattern)) validation.AddError(new Error(ErrorCause.RequiredValueIsNullOrEmpty, ErrorMessages.InvalidRequiredValue, postalCodePattern));*/

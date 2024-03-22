@@ -25,6 +25,7 @@ namespace VideogamesStore.Domain.Entities
             if(country is null || string.IsNullOrEmpty(city) || string.IsNullOrEmpty(street) || string.IsNullOrEmpty(house)) throw new ArgumentNullException();
         }
 
+
         public override IEnumerable<object> GetAtomicValues()
         {
             yield return City;

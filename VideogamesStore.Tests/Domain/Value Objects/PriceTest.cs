@@ -11,11 +11,7 @@ namespace VideogamesStore.Tests.Domain.Value_Objects
 
     public class PriceTest
     {
-        private ITestOutputHelper output;
-        public PriceTest(ITestOutputHelper output)
-        {
-            this.output = output;
-        }
+        public PriceTest(){}
         [Theory]
         [InlineData("USD", 100)]
         [InlineData("DOP", 14623)]
